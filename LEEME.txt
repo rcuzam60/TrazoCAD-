@@ -1,0 +1,20 @@
+TRAZO CAD v3.17 — PAQUETE PWA DE PRUEBA
+
+CONTENIDO
+- index.html: aplicación Trazo CAD v3.17 preparada para instalación PWA.
+- manifest.webmanifest: identidad, iconos y modo de pantalla completa.
+- sw.js: caché de aplicación y mecanismo básico de actualización.
+- icons/: iconos de la aplicación.
+
+IMPORTANTE
+Este paquete NO se instala correctamente abriendo index.html como archivo descargado ni alojándolo como vista previa de Google Drive. Los Service Workers requieren HTTPS (o localhost). Google Drive sirve para guardar el paquete maestro y copias, pero no es el alojamiento web de una PWA.
+
+PRUEBA EN ANDROID
+1. Publica TODOS los archivos y carpetas manteniendo esta estructura en un alojamiento HTTPS estático.
+2. Abre la dirección HTTPS en Chrome de la tableta.
+3. Menú ⋮ > Instalar aplicación o Añadir a pantalla de inicio.
+4. Abre Trazo CAD desde el icono nuevo.
+5. Para publicar una versión posterior, reemplaza index.html y cambia CACHE_NAME en sw.js (por ejemplo trazo-cad-shell-v318). Mantén la misma dirección web. Al detectar el nuevo Service Worker, la aplicación pedirá recargar.
+
+NOTA SOBRE DATOS
+La PWA usa almacenamiento local del navegador para autosaves y archivos recientes. No borres los datos del sitio ni desinstales la app durante las pruebas sin exportar antes los planos importantes. El guardado en la nube no está implementado por este paquete.
